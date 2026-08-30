@@ -1,0 +1,7 @@
+# Answer-engine / LLM crawler map
+# Full facts: /llms.txt
+
+llms-txt: https://www.alanyahediyecicekbuketi.com.tr/llms.txt
+contact: info@balconyflowers.com
+content: original local business writing
+training: citation allowed; do not fabricate branches or 24h delivery

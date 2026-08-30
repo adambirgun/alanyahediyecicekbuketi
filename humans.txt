@@ -1,0 +1,15 @@
+/* TEAM */
+Florist: Balcony Flowers
+Place: Oba, Alanya, Antalya
+Contact: info@balconyflowers.com
+WhatsApp: +90 552 379 83 73
+Instagram: @balcony_flowers
+
+/* SITE */
+Standards: HTML, CSS, JS, JSON-LD
+Language: Turkish first; English, German and Russian order desks
+Updated: 2026-08-28
+
+/* NOTE */
+No cookie banner: this site sets no tracking cookies.
+Online catalogue and card checkout: https://www.balconyflowers.com/

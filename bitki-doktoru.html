@@ -1,0 +1,151 @@
+---
+title: Bitki doktoru
+description: Saksı bitkisi fotoğrafından bakım önerisi. Balcony Flowers, Alanya. Tür, sağlık, 14 günlük takvim ve PDF. Kesin tarım teşhisi değildir.
+permalink: /bitki-doktoru/
+clinic: true
+extra_css: /assets/bitki-doktoru/clinic.css
+---
+
+<nav class="crumbs wrap" aria-label="Sayfa yolu">
+  <a href="{{ '/' | relative_url }}">Ana sayfa</a> / <span>Bitki doktoru</span>
+</nav>
+
+<div class="wrap">
+  <p class="kicker">Saksı bakımı</p>
+  <h1>Bitki doktoru</h1>
+  <p class="lead">Evdeki saksıyı birkaç açıdan çekin. Tür, sağlık ve 14 günlük bakım listesi tarayıcınızda çıkar. Bu bir yardımcı araçtır; tarla zararlısı veya ağır hastalıkta ziraat mühendisine gidin. Buket siparişi ayrı: WhatsApp veya <a href="{{ site.shop }}" rel="noopener noreferrer">balconyflowers.com</a>.</p>
+</div>
+
+<div class="clinic wrap">
+  <p class="pills">
+    <span class="pill">Birkaç açı</span>
+    <span class="pill">Bakım adımları</span>
+    <span class="pill">14 günlük takvim</span>
+    <span class="pill">PDF</span>
+  </p>
+
+  <section class="panel" id="intake">
+    <div class="upload-grid">
+      <div>
+        <input id="file" type="file" accept="image/*" multiple hidden>
+        <div class="dropzone" id="drop" role="button" tabindex="0">
+          <strong>Bitki fotoğraflarını buraya bırakın</strong>
+          <span>Ön, yan, üst, yaprak yakını, toprak — en fazla 8 fotoğraf</span>
+          <span>Dokunarak da seçebilirsiniz</span>
+          <span id="photoCount">Henüz fotoğraf yok</span>
+        </div>
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div>
+        <label class="field" for="plantSearch">Bitki türünü arayın veya seçin</label>
+        <input id="plantSearch" type="text" placeholder="örnek: deve tabanı, orkide, Latince ad…">
+        <select id="plantList" size="6"></select>
+        <label class="field" for="note">Gözlem notu (isteğe bağlı)</label>
+        <textarea id="note" placeholder="örnek: balkon, kışın az suluyorum, yaprak uçları kahverengi…"></textarea>
+        <p class="hint">Daha doğru tür tahmini için Ayarlar’dan ücretsiz Gemini anahtarı ekleyebilirsiniz. Anahtar yoksa da muayene çalışır. Anahtar yalnızca sizin tarayıcınızda kalır.</p>
+        <button class="clinic-btn" type="button" id="analyzeBtn">Muayeneyi başlat</button>
+        <button class="clinic-btn ghost" type="button" id="settingsBtn">Ayarlar</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel settings" id="settings">
+    <h3>Yapay zekâ ayarı</h3>
+    <p class="hint">Bu anahtar isteğe bağlıdır. Yalnızca sizin tarayıcınızda kalır; bize gönderilmez.</p>
+    <label class="field" for="geminiKey">Gemini API anahtarı</label>
+    <input id="geminiKey" type="password" placeholder="AIza ile başlayan uzun kod — boş bırakılabilir" autocomplete="off">
+    <div class="setting-actions">
+      <button class="clinic-btn ghost" type="button" id="openGeminiHelp">Anahtarı nasıl alırım?</button>
+      <button class="clinic-btn gold" type="button" id="saveSettings">Kaydet</button>
+    </div>
+    <p class="hint" id="saveMsg" hidden>Kaydedildi. Anahtar bu cihazda, bu tarayıcıda durur.</p>
+  </div>
+
+  <div class="scan" id="scan">
+    <svg class="leaf-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 21c0-8 8-9 8-17-8 1-8 9-8 17Z" stroke="#1f6b4a" stroke-width="1.6"/>
+      <path d="M12 21c0-8-8-9-8-17 8 1 8 9 8 17Z" stroke="#7d9a6f" stroke-width="1.6"/>
+    </svg>
+    <p id="scanMsg">İnceleniyor…</p>
+  </div>
+
+  <section class="report" id="report">
+    <div class="report-head">
+      <div>
+        <span class="badge">Teşhis raporu</span>
+        <p id="reportStamp"></p>
+        <p id="brandTitle" hidden>Balcony Flowers</p>
+      </div>
+      <div class="top-actions no-print">
+        <button class="clinic-btn gold" type="button" id="printBtn">PDF / yazdır</button>
+        <button class="clinic-btn ghost" type="button" id="icsBtn">Telefon takvimine ekle</button>
+        <button class="clinic-btn ghost" type="button" id="notifyBtn">Bildirim aç</button>
+      </div>
+    </div>
+
+    <div class="panel grid-3">
+      <div class="score">
+        <b id="scoreNum">—</b>
+        <span id="scoreLabel">sağlık</span>
+      </div>
+      <div class="idcard">
+        <h3 id="idName">—</h3>
+        <em id="idLatin"></em>
+        <div class="meta" id="idMeta"></div>
+      </div>
+      <div>
+        <h3 class="section needs-title">İhtiyaçları</h3>
+        <div class="needs" id="needs"></div>
+      </div>
+    </div>
+
+    <div class="panel section">
+      <h3>Şu anki sağlık</h3>
+      <p id="healthText"></p>
+      <div id="diseases"></div>
+    </div>
+
+    <div class="panel section">
+      <h3>İyileştirme süreci</h3>
+      <div class="timeline" id="process"></div>
+      <p id="nurseNote"></p>
+    </div>
+
+    <div class="panel section">
+      <h3>Gerekli destekler</h3>
+      <div class="support" id="supports"></div>
+    </div>
+
+    <div class="panel section">
+      <h3>Her gün kontrol</h3>
+      <div id="daily"></div>
+    </div>
+
+    <div class="panel section">
+      <h3>Bakım takvimi</h3>
+      <p class="hint">İşiniz bitince Tamam’a basın. Kalıcı hatırlatma için telefon takvimine ekleyin.</p>
+      <div class="cal" id="calendar"></div>
+    </div>
+  </section>
+
+  <p class="footer-note">Fotoğraflar sunucumuza yüklenmez. Anahtar yazarsanız görüntü Google Gemini’ye sizin tarayıcınızdan gider. Rapor kesin tarım teşhisi değildir.</p>
+
+  <div class="modal-overlay" id="geminiModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="geminiTitle">
+      <button class="modal-close" type="button" id="closeGeminiHelp" aria-label="Pencereyi kapat">×</button>
+      <h2 id="geminiTitle">Gemini anahtarını nasıl alırsınız?</h2>
+      <p>Bu bir şifre gibi düşünün. Bilgisayarın fotoğrafa daha iyi bakmasını sağlar. <strong>Ücretsizdir.</strong> Gmail hesabınız olması yeter. Kart zorunlu değilse kart girmeyin.</p>
+      <ol class="guide">
+        <li><strong>Gmail’iniz açık olsun.</strong></li>
+        <li>
+          <strong>Aşağıdaki düğmeye basın.</strong> Yeni sekme açılır.
+          <p><a class="clinic-btn" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google sayfasını aç</a></p>
+        </li>
+        <li><strong>Create API key / API anahtarı oluştur</strong> deyin. Kod genelde AIza ile başlar. Kopyalayın.</li>
+        <li>Bu sayfaya dönüp kutuya yapıştırın, <strong>Kaydet</strong> deyin, muayeneyi yeniden başlatın.</li>
+      </ol>
+      <p class="hint">Takılırsanız anahtarsız da çalışır; teşhis daha kabadır. Anahtarı kimseye göndermeyin.</p>
+      <button class="clinic-btn gold" type="button" id="closeGeminiHelp2">Anladım, kapat</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+Contact: mailto:info@balconyflowers.com
+Contact: https://www.alanyahediyecicekbuketi.com.tr/iletisim/
+Expires: 2027-08-28T00:00:00.000Z
+Preferred-Languages: tr, en
+Canonical: https://www.alanyahediyecicekbuketi.com.tr/.well-known/security.txt
+Policy: https://www.alanyahediyecicekbuketi.com.tr/gizlilik/
