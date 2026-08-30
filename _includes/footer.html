@@ -1,0 +1,42 @@
+{% assign lang = page.lang | default: site.lang | default: "tr" %}
+{% assign ui = site.data.ui[lang] %}
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand">{{ site.brand }}</p>
+      <p>{{ ui.footer_blurb }}</p>
+      <p><a href="{{ site.shop }}" rel="noopener noreferrer">{{ ui.shop }} · {{ ui.shop_url_label }}</a></p>
+    </div>
+    <div>
+      <h2>{{ ui.address }}</h2>
+      <p>{{ site.address_street }}<br>{{ site.postal }} {{ site.city }}/{{ site.region }}</p>
+      <p><a href="{{ site.maps }}" rel="noopener noreferrer">{{ ui.map }}</a></p>
+    </div>
+    <div>
+      <h2>{{ ui.contact }}</h2>
+      <p><a href="tel:{{ site.phone_tel }}">{{ site.phone_display }}</a><br>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      <p>{{ site.hours_store }} · {{ site.hours_delivery }}</p>
+    </div>
+    <div>
+      <h2>{{ ui.pages }}</h2>
+      <ul class="plain">
+        {% if lang == "tr" %}
+        <li><a href="{{ '/hakkimizda/' | relative_url }}">{{ ui.about }}</a></li>
+        <li><a href="{{ '/rehber/cicek-anlamlari/' | relative_url }}">{{ ui.meanings }}</a></li>
+        <li><a href="{{ '/ozel-gunler/' | relative_url }}">{{ ui.occasions }}</a></li>
+        <li><a href="{{ '/bitki-doktoru/' | relative_url }}">Bitki doktoru</a></li>
+        <li><a href="{{ '/gizlilik/' | relative_url }}">{{ ui.privacy }}</a></li>
+        <li><a href="{{ '/kvkk/' | relative_url }}">{{ ui.kvkk }}</a></li>
+        {% else %}
+        <li><a href="{{ '/bitki-doktoru/' | relative_url }}">Plant check</a></li>
+        <li><a href="{{ ui.home | relative_url }}#faq">FAQ</a></li>
+        <li><a href="{{ site.shop }}" rel="noopener noreferrer">{{ ui.shop_url_label }}</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-note">
+    <p>{{ ui.footer_note }}</p>
+  </div>
+</footer>

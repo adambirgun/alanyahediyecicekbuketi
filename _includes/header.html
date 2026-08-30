@@ -1,0 +1,27 @@
+{% assign lang = page.lang | default: site.lang | default: "tr" %}
+{% assign ui = site.data.ui[lang] %}
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ ui.home | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">
+        {% include mark.svg %}
+      </span>
+      <span class="brand-text">
+        <strong>Balcony Flowers</strong>
+        <span>{{ ui.tagline }}</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+      {{ ui.menu }}
+    </button>
+    <nav id="menu" class="nav" data-nav>
+      <ul>
+        {% for item in ui.nav %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <a class="btn btn-header ghost-shop" rel="noopener noreferrer" href="{{ site.shop }}">{{ ui.shop }}</a>
+    <a class="btn btn-header" rel="noopener noreferrer" href="https://wa.me/{{ site.whatsapp }}?text={{ ui.whatsapp_msg | uri_escape }}">{{ ui.whatsapp }}</a>
+  </div>
+</header>

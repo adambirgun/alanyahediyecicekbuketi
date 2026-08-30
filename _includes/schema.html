@@ -1,0 +1,113 @@
+{% assign canonical = page.url | absolute_url | replace: '/index.html', '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Florist", "LocalBusiness", "Store"],
+      "@id": "{{ site.url }}/#isletme",
+      "name": "{{ site.brand }}",
+      "alternateName": ["{{ site.public_name }}", "Balcony Corner", "Alanya Hediye Çiçek Buketi"],
+      "description": "{{ site.description }}",
+      "url": "{{ site.url }}/",
+      "image": "{{ '/assets/img/og.svg' | absolute_url }}",
+      "logo": "{{ '/assets/img/favicon.svg' | absolute_url }}",
+      "telephone": "{{ site.phone_tel }}",
+      "email": "{{ site.email }}",
+      "priceRange": "₺₺",
+      "currenciesAccepted": "TRY",
+      "paymentAccepted": "Cash, Credit Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.address_street }}",
+        "addressLocality": "{{ site.city }}",
+        "addressRegion": "{{ site.region }}",
+        "postalCode": "{{ site.postal }}",
+        "addressCountry": "{{ site.country }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": {{ site.geo_lat }},
+        "longitude": {{ site.geo_lng }}
+      },
+      "hasMap": "{{ site.maps }}",
+      "areaServed": [
+        {"@type": "City", "name": "Alanya"},
+        {"@type": "AdministrativeArea", "name": "Oba"},
+        {"@type": "AdministrativeArea", "name": "Tosmur"},
+        {"@type": "AdministrativeArea", "name": "Cikcilli"},
+        {"@type": "AdministrativeArea", "name": "Kestel"},
+        {"@type": "AdministrativeArea", "name": "Mahmutlar"},
+        {"@type": "AdministrativeArea", "name": "Konaklı"}
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "{{ site.hours_schema_opens }}",
+          "closes": "{{ site.hours_schema_closes }}"
+        }
+      ],
+      "sameAs": [
+        "{{ site.instagram }}",
+        "{{ site.facebook }}",
+        "{{ site.shop }}"
+      ],
+      "department": [
+        {
+          "@type": "Florist",
+          "name": "{{ site.alanyum_name }}",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alanyum AVM",
+            "addressLocality": "Alanya",
+            "addressRegion": "Antalya",
+            "addressCountry": "TR"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#site",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.title }}",
+      "inLanguage": ["tr","en","de","ru"],
+      "publisher": {"@id": "{{ site.url }}/#isletme"},
+      "about": {"@id": "{{ site.url }}/#isletme"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ canonical }}#sayfa",
+      "url": "{{ canonical }}",
+      "name": {{ page.title | default: site.title | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
+      "isPartOf": {"@id": "{{ site.url }}/#site"},
+      "about": {"@id": "{{ site.url }}/#isletme"},
+      "inLanguage": "{{ page.lang | default: site.lang }}",
+      "dateModified": "{{ page.date_modified | default: site.updated }}"
+    }{% if page.schema_extra %},
+    {{ page.schema_extra }}{% endif %}
+  ]
+}
+</script>
+{% if page.layout_faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in site.data.sss %}
+    {
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

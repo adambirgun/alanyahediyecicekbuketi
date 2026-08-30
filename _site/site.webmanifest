@@ -1,0 +1,17 @@
+{
+  "name": "Alanya Hediye Çiçek Buketi",
+  "short_name": "Balcony Flowers",
+  "description": "Alanya’da çiçek buketi. Oba ve Alanyum.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f4efe6",
+  "theme_color": "#f4efe6",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

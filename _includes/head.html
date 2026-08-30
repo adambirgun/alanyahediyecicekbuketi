@@ -1,0 +1,78 @@
+{% assign title = page.title | default: site.title %}
+{% if page.title %}
+  {% assign full_title = page.title | append: " · " | append: site.title %}
+{% else %}
+  {% assign full_title = site.title | append: " · " | append: site.tagline %}
+{% endif %}
+{% assign desc = page.description | default: site.description %}
+{% assign canonical = page.url | absolute_url | replace: '/index.html', '/' %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{ full_title | xml_escape }}</title>
+  <meta name="description" content="{{ desc | xml_escape }}">
+  <meta name="author" content="{{ site.brand | xml_escape }}">
+  <meta name="creator" content="{{ site.brand | xml_escape }}, Oba, Alanya">
+  <meta name="publisher" content="{{ site.legal_name | xml_escape }}">
+  <meta name="copyright" content="{{ site.legal_name | xml_escape }}">
+  <meta name="rating" content="general">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=yes">
+  <meta name="theme-color" content="#f4efe6">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="{{ page.robots | default: 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1' }}">
+  <meta name="googlebot" content="index,follow">
+  <meta name="bingbot" content="index,follow">
+  <meta name="geo.region" content="TR-07">
+  <meta name="geo.placename" content="Oba, Alanya, Antalya">
+  <meta name="geo.position" content="{{ site.geo_lat }};{{ site.geo_lng }}">
+  <meta name="ICBM" content="{{ site.geo_lat }}, {{ site.geo_lng }}">
+  <meta name="language" content="{{ page.lang | default: site.lang }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% if page.url == '/' or page.url == '/en/' or page.url == '/de/' or page.url == '/ru/' %}
+  <link rel="alternate" hreflang="tr" href="{{ '/' | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ '/en/' | absolute_url }}">
+  <link rel="alternate" hreflang="de" href="{{ '/de/' | absolute_url }}">
+  <link rel="alternate" hreflang="ru" href="{{ '/ru/' | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+  {% endif %}
+  <link rel="me" href="{{ site.instagram }}">
+  <link rel="me" href="{{ site.shop }}">
+  <link rel="author" href="{{ '/humans.txt' | relative_url }}">
+  <link rel="license" href="{{ '/gizlilik/' | relative_url }}">
+  <meta property="og:type" content="{{ page.og_type | default: 'website' }}">
+  <meta property="og:locale" content="{% if page.lang == 'en' %}en_US{% elsif page.lang == 'de' %}de_DE{% elsif page.lang == 'ru' %}ru_RU{% else %}tr_TR{% endif %}">
+  <meta property="og:site_name" content="{{ site.title | xml_escape }}">
+  <meta property="og:title" content="{{ full_title | xml_escape }}">
+  <meta property="og:description" content="{{ desc | xml_escape }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ '/assets/img/og.svg' | absolute_url }}">
+  <meta property="og:image:alt" content="{{ site.title | xml_escape }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ full_title | xml_escape }}">
+  <meta name="twitter:description" content="{{ desc | xml_escape }}">
+  <meta name="twitter:image" content="{{ '/assets/img/og.svg' | absolute_url }}">
+  <meta itemprop="name" content="{{ full_title | xml_escape }}">
+  <meta itemprop="description" content="{{ desc | xml_escape }}">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Balcony Flowers">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.clinic %}
+  <link rel="stylesheet" href="{{ '/assets/bitki-doktoru/clinic.css' | relative_url }}">
+  {% endif %}
+  {% if page.clinic %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'none'; connect-src 'self' https://generativelanguage.googleapis.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+  {% else %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'none'; connect-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+  {% endif %}
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()">
+  <meta name="supported-color-schemes" content="light">
+  {% include schema.html %}
+</head>

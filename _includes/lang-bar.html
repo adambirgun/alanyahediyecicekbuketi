@@ -1,0 +1,10 @@
+{% assign lang = page.lang | default: site.lang | default: "tr" %}
+{% assign ui = site.data.ui[lang] %}
+<nav class="lang-bar" aria-label="Language / Dil">
+  <div class="wrap">
+    <a href="{{ '/' | relative_url }}" lang="tr" hreflang="tr"{% if lang == "tr" %} aria-current="true"{% endif %}>TR</a>
+    <a href="{{ '/en/' | relative_url }}" lang="en" hreflang="en"{% if lang == "en" %} aria-current="true"{% endif %}>EN</a>
+    <a href="{{ '/de/' | relative_url }}" lang="de" hreflang="de"{% if lang == "de" %} aria-current="true"{% endif %}>DE</a>
+    <a href="{{ '/ru/' | relative_url }}" lang="ru" hreflang="ru"{% if lang == "ru" %} aria-current="true"{% endif %}>RU</a>
+  </div>
+</nav>

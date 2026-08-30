@@ -1,0 +1,55 @@
+---
+layout: default
+og_type: product
+---
+<nav class="crumbs wrap" aria-label="Sayfa yolu">
+  <a href="{{ '/' | relative_url }}">Ana sayfa</a> /
+  <a href="{{ '/buketler/' | relative_url }}">Buketler</a> /
+  <span>{{ page.title }}</span>
+</nav>
+<article class="wrap split">
+  <div>
+    <p class="kicker">Alanya çiçek buketi</p>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.lead }}</p>
+    <p class="price">{{ page.price_display }}</p>
+    <p class="note">{{ site.price_note }}</p>
+    <div class="actions">
+      <a href="https://wa.me/{{ site.whatsapp }}?text={{ page.wa | default: page.title | prepend: 'Merhaba, ' | append: ' sipariş etmek istiyorum.' | uri_escape }}">WhatsApp ile sipariş</a>
+      <a class="ghost" href="{{ page.shop_url }}" rel="noopener noreferrer">balconyflowers.com’da gör</a>
+    </div>
+    <ul class="facts">
+      <li><span>Hazırlık</span><span>{{ page.hazirlik | default: 'Oba tezgâhında, taze kesim' }}</span></li>
+      <li><span>Teslim</span><span>{{ page.teslim | default: '10:30–18:00, Alanya içi' }}</span></li>
+      <li><span>Uygun gün</span><span>{{ page.gun | default: 'Doğum günü, tebrik, günlük sürpriz' }}</span></li>
+    </ul>
+  </div>
+  <div>
+    <div class="figure" role="img" aria-label="{{ page.title }}">
+      {% include flower.svg %}
+    </div>
+    <div class="prose">
+      {{ content }}
+      <p>Stok ve renk gün içinde değişir. Fotoğraf teyidi WhatsApp’tan gider. Kartlı sipariş: <a href="{{ page.shop_url }}" rel="noopener noreferrer">balconyflowers.com</a>.</p>
+    </div>
+  </div>
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "brand": {"@type": "Brand", "name": "{{ site.brand }}"},
+  "category": "FlowerBouquet",
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ page.url | absolute_url }}",
+    "priceCurrency": "TRY",
+    "price": "{{ page.price }}",
+    "availability": "https://schema.org/LimitedAvailability",
+    "seller": {"@id": "{{ site.url }}/#isletme"},
+    "areaServed": "Alanya"
+  }
+}
+</script>
