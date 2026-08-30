@@ -1,0 +1,152 @@
+tr:
+  home: /
+  skip: İçeriğe geç
+  menu: Menü
+  tagline: Alanya · çiçek buketi
+  whatsapp: WhatsApp
+  whatsapp_msg: Merhaba, Alanya için çiçek buketi sipariş etmek istiyorum.
+  cta_call: Ara
+  cta_wa: WhatsApp sipariş
+  cta_shop: Buketler
+  shop: Online mağaza
+  shop_url_label: balconyflowers.com
+  footer_blurb: Oba’daki atölye ve Alanyum AVM köşesi. Kesme çiçek, kişiye özel buket, Alanya içi kapıya teslim.
+  address: Adres
+  contact: İletişim
+  pages: Sayfalar
+  map: Haritada aç
+  about: Hakkımızda
+  meanings: Çiçek anlamları
+  occasions: Özel günler
+  privacy: Gizlilik
+  kvkk: KVKK
+  crumbs_home: Ana sayfa
+  footer_note: Online sipariş ve kartlı ödeme için balconyflowers.com. Bu sitede izleme çerezi yok.
+  nav:
+    - label: Ana sayfa
+      url: /
+    - label: Buketler
+      url: /buketler/
+    - label: Teslimat
+      url: /teslimat/
+    - label: Mağazalar
+      url: /magazalar/
+    - label: Sipariş
+      url: /siparis/
+    - label: Bitki doktoru
+      url: /bitki-doktoru/
+    - label: SSS
+      url: /sss/
+    - label: İletişim
+      url: /iletisim/
+en:
+  home: /en/
+  skip: Skip to content
+  menu: Menu
+  tagline: Alanya · flower bouquets
+  whatsapp: WhatsApp
+  whatsapp_msg: Hello, I would like to order a flower bouquet in Alanya.
+  cta_call: Call
+  cta_wa: Order on WhatsApp
+  cta_shop: Bouquets
+  shop: Online shop
+  shop_url_label: balconyflowers.com
+  footer_blurb: Cut-flower workshop in Oba, a small corner in Alanyum Mall, and door delivery across Alanya.
+  address: Address
+  contact: Contact
+  pages: Pages
+  map: Open in Maps
+  about: About
+  meanings: Flower meanings
+  occasions: Occasions
+  privacy: Privacy
+  kvkk: Privacy law
+  crumbs_home: Home
+  footer_note: Card payments and the full catalogue live on balconyflowers.com. This site sets no tracking cookies.
+  nav:
+    - label: Home
+      url: /en/
+    - label: How to order
+      url: /en/#order
+    - label: Delivery
+      url: /en/#delivery
+    - label: Shops
+      url: /en/#shops
+    - label: FAQ
+      url: /en/#faq
+    - label: Plant check
+      url: /bitki-doktoru/
+de:
+  home: /de/
+  skip: Zum Inhalt
+  menu: Menü
+  tagline: Alanya · Blumensträuße
+  whatsapp: WhatsApp
+  whatsapp_msg: Hallo, ich möchte in Alanya einen Blumenstrauß bestellen.
+  cta_call: Anrufen
+  cta_wa: Per WhatsApp bestellen
+  cta_shop: Sträuße
+  shop: Onlineshop
+  shop_url_label: balconyflowers.com
+  footer_blurb: Werkstatt in Oba, eine Ecke im Alanyum, Lieferung in Alanya.
+  address: Adresse
+  contact: Kontakt
+  pages: Seiten
+  map: Karte öffnen
+  about: Über uns
+  meanings: Blumensprache
+  occasions: Anlässe
+  privacy: Datenschutz
+  kvkk: Datenschutz
+  crumbs_home: Start
+  footer_note: Karte und Katalog auf balconyflowers.com. Diese Seite setzt keine Tracking-Cookies.
+  nav:
+    - label: Start
+      url: /de/
+    - label: Bestellen
+      url: /de/#bestellen
+    - label: Lieferung
+      url: /de/#lieferung
+    - label: Läden
+      url: /de/#laeden
+    - label: FAQ
+      url: /de/#faq
+    - label: Pflanzen-Check
+      url: /bitki-doktoru/
+ru:
+  home: /ru/
+  skip: К содержанию
+  menu: Меню
+  tagline: Алания · букеты
+  whatsapp: WhatsApp
+  whatsapp_msg: Здравствуйте, хочу заказать букет в Алании.
+  cta_call: Позвонить
+  cta_wa: Заказ в WhatsApp
+  cta_shop: Букеты
+  shop: Интернет-магазин
+  shop_url_label: balconyflowers.com
+  footer_blurb: Мастерская в Оба, уголок в Alanyum и доставка по Алании.
+  address: Адрес
+  contact: Контакты
+  pages: Страницы
+  map: Открыть карту
+  about: О нас
+  meanings: Значения цветов
+  occasions: Праздники
+  privacy: Конфиденциальность
+  kvkk: Персональные данные
+  crumbs_home: Главная
+  footer_note: Оплата картой и витрина — на balconyflowers.com. На этом сайте нет следящих cookie.
+  nav:
+    - label: Главная
+      url: /ru/
+    - label: Заказ
+      url: /ru/#zakaz
+    - label: Доставка
+      url: /ru/#dostavka
+    - label: Магазины
+      url: /ru/#magaziny
+    - label: Вопросы
+      url: /ru/#faq
+    - label: Проверка растения
+      url: /bitki-doktoru/

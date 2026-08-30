@@ -1,0 +1,14 @@
+- label: Ana sayfa
+  url: /
+- label: Buketler
+  url: /buketler/
+- label: Teslimat
+  url: /teslimat/
+- label: Mağazalar
+  url: /magazalar/
+- label: Sipariş
+  url: /siparis/
+- label: SSS
+  url: /sss/
+- label: İletişim
+  url: /iletisim/
