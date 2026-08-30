@@ -1,0 +1,101 @@
+title: "Alanya Hediye Çiçek Buketi"
+tagline: "Balcony Flowers · Oba ve Alanyum"
+description: "Alanya’da çiçek buketi. Oba’daki Balcony Flowers tezgâhından ve Alanyum AVM köşesinden aynı gün teslimat. WhatsApp: 0552 379 83 73."
+url: "https://www.alanyahediyecicekbuketi.com.tr"
+baseurl: ""
+lang: "tr"
+timezone: "Europe/Istanbul"
+encoding: "utf-8"
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: pretty
+strict_front_matter: true
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+include:
+  - .well-known
+  - .well-known/security.txt
+
+exclude:
+  - README.md
+  - GORSELLER.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .gitignore
+  - LICENSE
+  - node_modules
+  - package.json
+  - package-lock.json
+  - scripts
+  - "yapay zeka bitki analizi"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/img/og.svg
+      author: "Balcony Flowers"
+  - scope:
+      path: "en"
+    values:
+      lang: en
+      hreflang: en
+  - scope:
+      path: "de"
+    values:
+      lang: de
+      hreflang: de
+  - scope:
+      path: "ru"
+    values:
+      lang: ru
+      hreflang: ru
+
+collections:
+  buketler:
+    output: true
+    permalink: /buketler/:name/
+  bolgeler:
+    output: true
+    permalink: /teslimat/:name/
+
+brand: "Balcony Flowers"
+legal_name: "Balcony Flowers"
+public_name: "Alanya Hediye Çiçek Buketi"
+phone_display: "0552 379 83 73"
+phone_tel: "+905523798373"
+whatsapp: "905523798373"
+email: "info@balconyflowers.com"
+instagram: "https://www.instagram.com/balcony_flowers/"
+instagram_handle: "balcony_flowers"
+facebook: "https://www.facebook.com/p/Balcony-Flowers-Cafe-100064133221591/"
+shop: "https://www.balconyflowers.com/"
+maps: "https://maps.app.goo.gl/XNbUaiNtdq7HMJwP7"
+trendyol_note: "Trendyol’da balconyflowers satıcısı"
+
+address_street: "Oba, Çalış sitesi, Eczacılar Cd. D:A Blok"
+address_alt: "Oba Mah., Eczacılar Cad. No:12 A"
+postal: "07460"
+city: "Alanya"
+region: "Antalya"
+country: "TR"
+geo_lat: "36.538001"
+geo_lng: "32.048588"
+
+hours_store: "08:30–19:30"
+hours_delivery: "10:30–18:00"
+hours_schema_opens: "08:30"
+hours_schema_closes: "19:30"
+
+alanyum_name: "Balcony Corner · Alanyum AVM"
+alanyum_note: "Alanyum AVM içi hazır buket köşesi"
+
+price_note: "Fiyat mevsime ve dal sayısına göre değişir. Güncel tutarı WhatsApp’tan veya balconyflowers.com üzerinden sorun."
+updated: "2026-08-28"

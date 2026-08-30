@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.md text working-tree-encoding=UTF-8
+*.html text working-tree-encoding=UTF-8
+*.yml text working-tree-encoding=UTF-8
+*.svg text
